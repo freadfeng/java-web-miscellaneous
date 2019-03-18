@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+<company xmlns="http://org.ffeng.miscellaneous/">	
+	<departments>
+		<department name="R-and-D">
+			<ffeng>fread.feng</ffeng>
+			<binsonh>binsonh</binsonh>
+		</department>
+		
+		<department name="HR">
+			<hehe>hehe</hehe>
+		</department>
+		
+		<department name="IT">
+			<id-support>bill</id-support>
+		</department>
+	</departments>
+</company>	
