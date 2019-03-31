@@ -3,14 +3,33 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
-	
+
 	<display-name>java-web-miscellaneous</display-name>
-	
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
+
+	<!-- badminton -->
+	<servlet>
+		<servlet-name>project-badminton</servlet-name>
+		<servlet-class>org.ffeng.miscellaneous.projects.badminton.servlet.BadmintonDispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+					/WEB-INF/config/badminton/database-context.xml,
+					/WEB-INF/config/badminton/app-context.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>project-badminton</servlet-name>
+		<url-pattern>/projects/badminton/*</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>

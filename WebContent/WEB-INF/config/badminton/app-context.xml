@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+  http://www.springframework.org/schema/util
+  http://www.springframework.org/schema/util/spring-util-4.2.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context-4.2.xsd
+  http://www.springframework.org/schema/mvc
+  http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+
+	<!-- SimpleUrlHandlerMapping is not in default HandlerMapping list -->
+	<bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/login">badmintonBoginController</prop>
+			</props>
+		</property>
+		<property name="urlMap">
+			<map>
+				<entry key="/login.action" value-ref="badmintonBoginController" />
+				<entry key="/register.action" value-ref="badmintonRegisterController" />
+			</map>
+		</property>
+	</bean>
+	<bean id="badmintonBoginController" class="org.ffeng.miscellaneous.projects.badminton.controller.LoginController" />
+	<!-- SimpleControllerHandlerAdapter -->
+	<bean id="simpleControllerHandlerAdapter" class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter">
+	</bean>
+	<!-- InternalResourceViewResolver -->
+	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"></property>
+		<property name="suffix" value=""></property>
+		<property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"></property>
+	</bean>
+	
+	<!-- Register -->
+	<bean id="badmintonRegisterController" class="org.ffeng.miscellaneous.projects.badminton.controller.RegisterController">
+		<property name="badmintonRegisterService" ref="badmintonRegisterService"></property>
+	</bean>
+	<bean id="badmintonRegisterService" class="org.ffeng.miscellaneous.projects.badminton.logic.impl.RegisterServiceImpl">
+		<property name="badmintonRegisterDao" ref="badmintonRegisterDao"></property>
+	</bean>
+	<bean id="badmintonRegisterDao" class="org.ffeng.miscellaneous.projects.badminton.dao.RegisterDao">
+		<property name="badmintonDataSource" ref="badmintonDataSource"/>
+	</bean>
+
+</beans>
