@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+<properties>
+	<!-- <property name="driver" value="com.mysql.jdbc.Driver"/> -->
+	<property name="url" value="jdbc:mysql://118.24.120.2:3306/miscellaneous?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true"/>
+	<property name="username" value="ffen"/>
+    	<property name="password" value="ffeng"/>
+   </properties>
+
+   <environments default="test">
+      <environment id="test">
+         <transactionManager type="JDBC" />
+         <dataSource type="POOLED">
+            <!-- <property name="driver" value="${driver}" /> -->
+            <property name="url" value="${url}" />
+            <property name="username" value="${username}" />
+            <property name="password" value="${password}" />
+         </dataSource>
+      </environment>
+   </environments>
+   
+   <mappers>
+     <mapper resource="org/ffeng/miscellaneous/mybatis/userMapper.xml" />
+   </mappers>
+  </configuration>
