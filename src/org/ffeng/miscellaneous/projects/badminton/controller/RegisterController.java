@@ -3,12 +3,9 @@ package org.ffeng.miscellaneous.projects.badminton.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.dbcp.BasicDataSource;
 import org.ffeng.miscellaneous.projects.badminton.bean.User;
 import org.ffeng.miscellaneous.projects.badminton.logic.RegisterService;
-import org.ffeng.miscellaneous.projects.badminton.servlet.BadmintonDispatcherServlet;
 import org.springframework.util.StringUtils;
-import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 

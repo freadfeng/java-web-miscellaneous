@@ -55,6 +55,17 @@
 			<version>1.4</version>
 		</dependency>
 
-
+	<!-- mybatis learning start -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.15</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.2.8</version>
+		</dependency>
+	<!-- mybatis learning end -->
 	</dependencies>
 </project>
